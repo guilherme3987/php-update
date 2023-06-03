@@ -1,0 +1,114 @@
+*************************** HTML ********************************************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type="text/css" href = "style.css">
+    <script src = "script.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="bloco">
+        <div class="carrossel">
+          <div class="bloco_1"></div>
+          <div class="bloco_2"></div>
+          <div class="bloco_3"></div>
+          <div class="bloco_4"></div>
+          <div class="bloco_5"></div>
+          <div class="bloco_6"></div>
+        </div>
+    </div>
+
+   <div class="botao">
+    <button id="anterior"><</button>
+    <button id="proximo">></button>
+   </div>
+
+ 
+    
+</body>
+</html>
+
+************************************* JS *************************************
+const botaoAnterior = document.getElementById("anterior");
+const botaoProximo = document.getElementById("proximo");
+const carrossel = document.querySelector(".carrossel");
+
+let posicaoAtual = 0;
+botaoProximo.addEventListener("click", () => {
+    if (posicaoAtual < 5) {
+      posicaoAtual++;
+      carrossel.style.transform = `translateX(-${posicaoAtual * 250}px)`;
+    }
+});
+
+botaoAnterior.addEventListener("click", () => {
+  if (posicaoAtual >= 0) {
+    posicaoAtual = posicaoAtual-posicaoAtual;
+    carrossel.style.transform = `translateX(-${posicaoAtual * 10}px)`;
+  }
+});
+************************************* CSS *****************************************
+
+  .bloco {
+    width: 1000px;
+    height: 250px;
+    background-color: rgba(216, 216, 216, 0.437);
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .carrossel {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    transition: all 1s ease;
+  }
+  
+.bloco_1,.bloco_2,.bloco_3,.bloco_4 {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-right: 55px;
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    border-radius: 100px;
+    background-color: black;
+}
+.bloco_6,.bloco_5{
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-left: 75px;
+    margin-right: 45px;
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    border-radius: 100px;
+    background-color: black;
+}
+
+.botao{
+    justify-content: center;
+    display: flex;
+}
+button{
+    margin-top: -135px;
+    width: 110px;
+    height: 35px;
+    margin-right: 510px;
+    margin-left: 510px;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}

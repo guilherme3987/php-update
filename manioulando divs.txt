@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exemplo de troca de divs</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <ul class="topnav">
+        <li><a href="index.html">Pagina Inicial</a></li>
+        <li><a href="index.html">Sobre</a></li>
+        <li><a href="index.html">Institucional</a></li>
+    </ul>
+    <div class="pagina">
+      <div class="pagina_form">
+          <form class="pagina_formulario">
+              <h2>Calcule sua pegada de carbono</h2>
+              <div class="campo1">
+                  <label>Consumo aproximado de eletricidade por mês:</label>
+              </div>
+              
+              <div class="campo2">
+                  <label> Quantas vezes come carne vermelha na semana:</label>
+              </div>
+              <div class="campo3">
+                  <label> Consumo de gás por mês:</label>
+              </div>
+              <div class="campo_radio">
+                  <legend>Qual transporte mais utilizado na semana? </legend>
+                  <select class="escolhido">
+                      <option value="1">Ônibus</option>
+                      <option value="2">Carro</option>
+                      <option value="3">Moto</option>
+                      <option value="4">Outros</option>
+                  </select>      
+              </div>
+                  <button type="submit" id="botao">Enviar</button>
+              </form>
+      </div>
+
+    <div class="div-1" onclick="toggleDivs()">
+      <span id="div-1-texto">Doe de acordo com sua Pegada de C02</span>
+    </div>
+    <div class="div-2 hidden" onclick="toggleDivs()">
+        <div class="bloco">
+            <div id="logo1"></div>
+            <div id="texto1"> </div>
+            <div id="div-3"></div>
+        </div>
+        <div class="bloco2">
+            <div id="logo2"></div>
+            <div id="texto2"> </div>
+            <div id="div-4"></div>
+        </div>
+        <div class="bloco3">
+            <div id="logo3"></div>
+            <div id="texto3"> </div>
+            <div id="div-5"></div>
+        </div>
+       
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+function toggleDivs() {
+    const div1 = document.querySelector('.div-1');
+    const div2 = document.querySelector('.div-2');
+    
+
+    if (!((div1.style.display == 'none') && (div2.hasAttribute('data-permanent')))) {
+      div1.style.display = 'none';
+      div2.style.display = 'block';
+      div2.setAttribute('onclick', 'makePermanent()');
+      div1.textContent = '';
+    } else {
+      div1.style.display = 'block';
+      div2.style.display = 'none';
+      div1.textContent = 'Div 1';
+    }
+}
+
+const texto1 = document.getElementById('texto1');
+texto1.innerHTML = "O uso de transporte sustentável é fundamental para a preservação do meio ambiente e para a redução da poluição atmosférica. Ao escolher alternativas de transporte como bicicletas, transporte público, caronas solidárias ou veículos elétricos, contribuímos para a diminuição da emissão de gases de efeito estufa e, consequentemente, para a melhoria da qualidade do ar que respiramos."
+
+const texto2 = document.getElementById('texto2')
+texto2.innerHTML = "O alto consumo de carne tem se mostrado um problema ambiental e de saúde pública cada vez mais evidente. A produção de carne exige um grande uso de recursos naturais, como água, terra e energia, além de contribuir significativamente para a emissão de gases de efeito estufa e para o desmatamento de áreas naturais. Além disso, o consumo excessivo de carne pode estar associado a diversos problemas de saúde, como doenças cardiovasculares e câncer."
+
+const texto3 = document.getElementById('texto3');
+texto3.innerHTML = "O alto gasto de luz pode trazer consequências negativas tanto para o meio ambiente quanto para o bolso do consumidor. O consumo excessivo de energia elétrica pode aumentar a emissão de gases de efeito estufa, contribuindo para o aquecimento global e as mudanças climáticas. "
+
+
+
+
+div-1 {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-top: 35px;
+    width: 150px;
+    height: 45px;
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #1abc9c;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .div-1:hover {
+    transition: background-color 0.3s;  
+    background-color: #148f77;
+  }
+  
+  .div-2 {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    width: 900px;
+    height: 630px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1abc9c;
+}
+  .bloco,.bloco2,.bloco3,.bloco4{
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 900px;
+    height: 200px;
+    border-radius: 10px;
+    background-color:white ;
+  }
+  .bloco2,.bloco3,.bloco4{
+    margin-top: 15px;
+  }
+  #logo1,#logo2,#logo3,#logo4{
+    width: 55px;
+    height: 55px;
+    margin-top: 5px;
+    border-radius: 50px;
+}
+#div-3,#div-4,#div-5,#div-6{
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-right: 35px;
+    padding: 60px;
+    border-radius: 100px;
+    background-color: rgb(224, 224, 224);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #div-3{
+    background-image: url("img.png");
+  }
+  #div-4{
+    background-image: url("img3.png");
+  }
+  #div-5{
+    background-image: url("img2.png");
+  }
+
+  #texto1,#texto2,#texto3,#texto4{
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-right: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#texto1,#texto2{
+    padding: 5px;
+}
+#texto3{
+  padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+  
+.hidden-text {
+    display: none;
+}

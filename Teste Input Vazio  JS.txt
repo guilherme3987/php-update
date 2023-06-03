@@ -1,0 +1,57 @@
+************************ Teste da input vazio ************************
+// cria um novo elemento input
+const input = document.createElement('input');
+const input2 = document.createElement('input');
+
+// define o tipo de input como number
+input.type = 'number';
+
+// define o id do input
+input.id = 'numero';
+
+// define o nome do input
+input.name = 'numero';
+
+// define a mensagem de placeholder
+input.placeholder = 'Digite um número';
+
+// define que o input é obrigatório
+input.required = true;
+
+
+// define o tipo de input2 como number
+input2.type = 'number';
+
+// define o id do input2
+input2.id = 'numero2';
+
+// define o nome do input2
+input2.name = 'numero2';
+
+// define a mensagem de placeholder
+input2.placeholder = 'Digite um número';
+
+// define que o input2 é obrigatório
+input.required = true;
+
+// adiciona o input ao elemento com id 'formulario'
+document.querySelector('.formulario').appendChild(input);
+document.querySelector('.formulario').appendChild(input2);
+
+botao.addEventListener("click",(event)=>{
+    event.preventDefault();
+
+    if((input.value == ' ') || (input2.value == '')){
+        alert("Os campos são obrigatórios");
+    }
+    else{    
+        const num1 = Number(input.value);
+        const num2 = Number(input2.value);
+        console.log(typeof(num1),typeof(num2));
+        const sum = num1+num2;
+        console.log("Resultado da soma é: ",sum);
+    }
+
+});
+
+

@@ -1,0 +1,52 @@
+               if(selectedValueN === 2){
+                    console.log("TESTE");
+                    console.log("Valores: ",num1,num2,num3);
+
+                    var xvezesCar = parseInt(prompt("Quantas vezes usa o carro na semana: "));
+                    
+                    while(isNaN(xvezesCar) || xvezesCar % 1 !== 0 || xvezesCar < 1){
+                        xvezesCar = parseInt(prompt("Valor inválido! Digite quantas vezes usa o ônibus por semana (apenas números inteiros maiores que zero):"));
+                    }
+                    
+                    console.log("Vezes: ",xvezesCar);
+                    
+                    if(num1 >= 300){
+                        console.log("TESTE 1\nValor de energia: ",num1)
+                        var bloco2 = document.querySelector(".bloco2");
+                        bloco2.style.display = "flex";
+
+                        var solucoes2 = document.getElementById("solucoes2");
+                        solucoes2.innerHTML = "TESTE (ENERGIA >= 300";
+                        solucoes2.style.display = "flex";
+
+                    }else{
+                        if(num1<300){
+                            console.log("TESTE 2\nValor energia: ",num1)
+                            var bloco2 = document.querySelector(".bloco2");
+                            bloco2.style.display = "flex";
+    
+                            var solucoes2 = document.getElementById("solucoes2");
+                            solucoes2.innerHTML = "TESTE (ENERGIA < 300";
+                            solucoes2.style.display = "flex";
+                        }
+                    }
+                    if(num2 >=5){
+                        console.log("Quantidade de carne na semana >=5: ",num2)
+                        var solucoes3 = document.getElementById("solucoes3");
+                        var bloco3 = document.querySelector(".bloco3");
+
+                        solucoes3.innerHTML = "TESTE (CONSUMO DE CV >=5."
+                        solucoes3.style.display = "flex";
+                        bloco3.style.display = "flex";
+                    }else{
+                        if(num2 <5){
+                            console.log("Quantidade de carne na semana <5: ",num2)
+                            var solucoes3 = document.getElementById("solucoes3");
+                            var bloco3 = document.querySelector(".bloco3");
+    
+                            solucoes3.innerHTML = "TESTE (CONSUMO DE CV <5."
+                            solucoes3.style.display = "block";
+                            bloco3.style.display = "flex";
+                        }
+                    }
+               }

@@ -1,0 +1,95 @@
+***************************** HTML ******************************************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type="text/css" href = "style.css">
+    <script src = "script.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <header>TESTE</header>
+
+    <div class="blocoA">
+        <div class="blocoB">
+            <p>Escolha</p>
+            <select class="escolhido">
+                <option value="1">Valor 1</option>
+                <option value="2">Valor 2</option>
+                <option value="3">Valor 3</option>
+            </select>
+        
+            <button class="botao" id="botao" name="btn">Enviar</button>
+
+        </div>
+    </div>
+</body>
+</html>
+****************************** JS ******************************************
+
+ //TESTE ROTINAS DE ESCOLHA
+ var selectElement = document.querySelector(".escolhido");
+ var botaoElement = document.getElementById("botao");
+
+ botaoElement.addEventListener("click", function(event) {
+     event.preventDefault();
+   var selectedValue = selectElement.value;
+
+   var selectedValueN = Number(selectedValue);
+
+   if(selectedValueN === 1){
+     console.log("Valor selecionado: " + selectedValue);
+     console.log("Typeof Valor Selecionada: " + typeof(selectedValue));
+     console.log("Novo Typeof: "+typeof(selectedValueN));
+     alert("Escolheu: "+selectedValueN);
+    }
+    if(selectedValueN === 2){
+        console.log("Valor selecionado: " + selectedValue);
+        console.log("Typeof Valor Selecionada: " + typeof(selectedValue));
+        console.log("Novo Typeof: "+typeof(selectedValueN));
+        alert("Escolheu: "+selectedValueN);
+    }
+    if(selectedValueN === 3){
+        console.log("Valor selecionado: " + selectedValue);
+        console.log("Typeof Valor Selecionada: " + typeof(selectedValue));
+        console.log("Novo Typeof: "+typeof(selectedValueN));
+        alert("Escolheu: "+selectedValueN);
+    }
+
+
+});
+
+*************************************************************************************
+// Alterações
+
+input 
+input2
+
+ // Um transporte coletivo emite em média 1,35 kg de CO2 por km (polui menos que o carro)
+ var KM = Number(prompt("Quantos KM tem a viagem ? "));
+var xvezes= Number(prompt("Quantas vezes por semana: "));
+ 
+const pegadaOnibus = 1.35  * KM * xvezes; 
+
+const consumoCVM = 4*input2;
+
+const resultado = consumoCVM + pegadaOnibus + input;
+alert(resultado);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
